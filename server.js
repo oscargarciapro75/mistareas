@@ -44,7 +44,8 @@ const server = http.createServer((req, res) => {
           id: nextId++,
           titulo: data.titulo || '',
           descripcion: data.descripcion || '',
-          estado: status
+          estado: status,
+          creada: data.creada === true
         };
         tasks.push(task);
         sendJSON(res, 201, task);
@@ -65,6 +66,7 @@ const server = http.createServer((req, res) => {
         if (data.estado && allowedStatuses.includes(data.estado)) {
           task.estado = data.estado;
         }
+        if (data.creada !== undefined) task.creada = data.creada === true;
         sendJSON(res, 200, task);
       });
     } else {
