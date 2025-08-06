@@ -1,8 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
 }
 
 #tasks li {
-  margin: 5px 0;
+  margin-bottom: 5px;
 }
